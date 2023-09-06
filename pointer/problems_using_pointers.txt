@@ -1,0 +1,22 @@
+There may be problems due to pointers :- (you may get run time error)
+ i>  unintialized pointers
+ ii>  Memory leak
+ iii> Dangling pointers
+  
+  iii. DANGLING POINTER:- If we give the address to any external function , and if that external function delete that pointer . And if we try to access it in main function then compiler will show run time error. This is the concept of dangling pointers./
+  syntax:- 
+   void fun(*q) 
+   {
+    -----
+    -----
+    delete []q;
+   }
+   void main()
+   {
+    int *p=new int[5];
+    -----
+    -----
+    fun(p);
+    cout<<*p;
+    return 0;
+   }
